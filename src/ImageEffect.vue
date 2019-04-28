@@ -8,18 +8,26 @@
       blur ? 'blur' : '',
       blurReverse ? 'blur-reverse' : '',
       grayScale ? 'gray-scale' : '',
+      grayScaleReverse ? 'gray-scale-reverse' : '',
       sepia ? 'sepia' : '',
+      sepiaReverse ? 'sepia-reverse' : '',
       blurGray ? 'blur-gray' : '',
       blurGrayReverse ? 'blur-gray-reverse' : '',
       opacity ? 'opacity' : '',
+      opacityReverse ? 'opacity-reverse' : '',
       filterBlue ? 'filter-blue' : '',
+      filterBlueReverse ? 'filter-blue-reverse' : '',
       flash ? 'flash' : '',
       shine ? 'shine' : '',
       circle ? 'circle' : ''
     ]"
   >
     <div class="wrap-image" :class="classImage">
-      <img :src="src" :style="`width: ${width}; height: ${height}`" />
+      <img
+        :src="src"
+        :style="`width: ${width}; height: ${height}`"
+        :alt="alt"
+      />
     </div>
     <figcaption :class="classDescription">{{ description }}</figcaption>
   </figure>
@@ -80,7 +88,15 @@ export default {
       type: Boolean,
       default: false
     },
+    grayScaleReverse: {
+      type: Boolean,
+      default: false
+    },
     sepia: {
+      type: Boolean,
+      default: false
+    },
+    sepiaReverse: {
       type: Boolean,
       default: false
     },
@@ -96,7 +112,15 @@ export default {
       type: Boolean,
       default: false
     },
+    opacityReverse: {
+      type: Boolean,
+      default: false
+    },
     filterBlue: {
+      type: Boolean,
+      default: false
+    },
+    filterBlueReverse: {
       type: Boolean,
       default: false
     },
@@ -210,6 +234,18 @@ export default {
   filter: grayscale(0);
 }
 
+/* Gray Scale Reverse*/
+.gray-scale-reverse .wrap-image img {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.gray-scale-reverse .wrap-image:hover img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
 /* Sepia */
 .sepia .wrap-image img {
   -webkit-filter: sepia(100%);
@@ -218,6 +254,18 @@ export default {
   transition: 0.3s ease-in-out;
 }
 .sepia .wrap-image:hover img {
+  -webkit-filter: sepia(0);
+  filter: sepia(0);
+}
+
+/* Sepia Reverse*/
+.sepia-reverse .wrap-image img {
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.sepia-reverse .wrap-image:hover img {
   -webkit-filter: sepia(0);
   filter: sepia(0);
 }
@@ -256,6 +304,17 @@ export default {
   opacity: 0.5;
 }
 
+/* Opacity Reverse*/
+.opacity-reverse .wrap-image img {
+  opacity: 0.5;
+
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.opacity-reverse .wrap-image:hover img {
+  opacity: 1;
+}
+
 /* Filter Blue */
 .filter-blue .wrap-image {
   background: #1abc9c;
@@ -267,6 +326,19 @@ export default {
 }
 .filter-blue .wrap-image:hover img {
   opacity: 0.5;
+}
+
+/* Filter Blue Reverse*/
+.filter-blue-reverse .wrap-image {
+  background: #1abc9c;
+}
+.filter-blue-reverse .wrap-image img {
+  opacity: 0.5;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.filter-blue-reverse .wrap-image:hover img {
+  opacity: 1;
 }
 
 /* Flash */
@@ -332,7 +404,6 @@ export default {
     left: 125%;
   }
 }
-
 /* Circle */
 .circle .wrap-image {
   position: relative;

@@ -1,10 +1,11 @@
 {
   "name": "vue-image-effect",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/image.min.js",
+  "description": "A simple, highly customisable image effect component for Vue 2.x",
+  "main": "dist/image-effect.min.js",
   "scripts": {
-    "dist": "webpack --env=webpack.dist"
+    "dev": "webpack-dev-server --content-base ./example --env=webpack.dev --open --hot",
+    "build": "webpack --env=webpack.prod"
   },
   "repository": {
     "type": "git",
@@ -15,16 +16,23 @@
     "src"
   ],
   "keywords": [
+    "vue image",
+    "image effect",
+    "effect image",
+    "vue effect",
+    "effect vue",
+    "image transition",
+    "transition image",
     "vue",
     "vuejs",
     "vue 2"
   ],
-  "author": "Thaycacac",
+  "author": "thaycacac@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/thaycacac/vue-image-effect/issues"
   },
-  "homepage": "https://github.com/thaycacac/vue-image-effect",
+  "homepage": "https://github.com/thaycacac/vue-image-effect#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",

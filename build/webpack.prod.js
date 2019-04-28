@@ -3,7 +3,7 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
-    'vue-image-effect': './src/index.js',
+    'image-effect': './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, '../dist'),

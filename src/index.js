@@ -1,3 +1,3 @@
-import VueImageEffect from './image.vue'
+import VueImageEffect from './ImageEffect.vue'
 
 export default VueImageEffect
