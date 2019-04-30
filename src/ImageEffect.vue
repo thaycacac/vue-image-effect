@@ -34,106 +34,106 @@ export default {
   props: {
     src: {
       type: String,
-      required: true
+      required: true,
     },
     alt: {
-      type: String
+      type: String,
     },
     description: {
-      type: String
+      type: String,
     },
     width: {
       type: String,
-      default: "auto"
+      default: 'auto',
     },
     height: {
       type: String,
-      default: "auto"
+      default: 'auto',
     },
     classDescription: {
-      type: String
+      type: String,
     },
     classImage: {
-      type: String
+      type: String,
     },
     zoomIn: {
       type: Boolean,
-      default: false
+      default: false,
     },
     zoomOut: {
       type: Boolean,
-      default: false
+      default: false,
     },
     rotate: {
       type: Boolean,
-      default: false
+      default: false,
     },
     rotateReverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     blur: {
       type: Boolean,
-      default: false
+      default: false,
     },
     blurReverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     grayScale: {
       type: Boolean,
-      default: false
+      default: false,
     },
     grayScaleReverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     sepia: {
       type: Boolean,
-      default: false
+      default: false,
     },
     sepiaReverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     blurGray: {
       type: Boolean,
-      default: false
+      default: false,
     },
     blurGrayReverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     opacity: {
       type: Boolean,
-      default: false
+      default: false,
     },
     opacityReverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     filterBlue: {
       type: Boolean,
-      default: false
+      default: false,
     },
     filterBlueReverse: {
       type: Boolean,
-      default: false
+      default: false,
     },
     flash: {
       type: Boolean,
-      default: false
+      default: false,
     },
     shine: {
       type: Boolean,
-      default: false
+      default: false,
     },
     circle: {
       type: Boolean,
-      default: false
-    }
-  }
-};
+      default: false,
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -320,14 +320,10 @@ export default {
   left: -75%;
   z-index: 2;
   display: block;
-  content: "";
+  content: '';
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 100%
-  );
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
   transform: skewX(-25deg);
 }
 .shine .wrap-image:hover::before {
@@ -348,7 +344,7 @@ export default {
   left: 50%;
   z-index: 2;
   display: block;
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   background: rgba(255, 255, 255, 0.2);
