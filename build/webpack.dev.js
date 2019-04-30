@@ -1,42 +1,16 @@
-const path = require("path");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const path = require('path')
+const merge = require('webpack-merge')
 
-module.exports = {
+const baseConfig = require('./webpack.base')
+
+module.exports = merge(baseConfig, {
   entry: {
-    "image-effect": "./example/app.js"
+    'image-effect': './example/app.js',
   },
   output: {
-    path: path.resolve(__dirname, "../dist"),
-    publicPath: "/dist/",
-    filename: "[name].js"
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/dist/',
+    filename: '[name].js',
   },
-  resolve: {
-    extensions: [".js", ".vue"]
-  },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        loader: "vue-loader"
-      },
-      {
-        test: /\.js$/,
-        loader: "babel-loader",
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        use: [
-          "vue-style-loader",
-          {
-            loader: "css-loader",
-            options: { importLoaders: 1 }
-          },
-          "postcss-loader"
-        ]
-      }
-    ]
-  },
-  devtool: "eval-source-map",
-  plugins: [new VueLoaderPlugin()]
-};
+  devtool: 'eval-source-map',
+})
