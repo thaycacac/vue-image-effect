@@ -1,6 +1,7 @@
 # Image Effect Component
 
 [![npm](https://img.shields.io/npm/dt/vue-image-effect.svg)](https://github.com/thaycacac/vue-image-effect)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/000b0d34-355b-44f4-8218-b762ca9233bf/deploy-status)](https://app.netlify.com/sites/vue-image-effect/deploys)
 
 A simple, highly customisable image effect component for Vue.
 
@@ -28,26 +29,26 @@ npm install vue-image-effect
 Then require in your project:
 
 ```js
-const VueImage = require("vue-image-effect");
+const VueImage = require('vue-image-effect')
 ```
 
 or ES6 syntax:
 
 ```js
-import VueImage from "vue-image-effect";
+import VueImage from 'vue-image-effect'
 ```
 
 Then you can register the component globally:
 
 ```js
-Vue.component("vue-image-effect", VueImage);
+Vue.component('vue-image-effect', VueImage)
 ```
 
 Or in your `Vue component`:
 
 ```js
 components: {
-  VueImage;
+  VueImage
 }
 ```
 
@@ -68,7 +69,7 @@ You may also include `vue-image-effect` directly in to your webpage via Unpkg. S
 You will need to register the component by doing:
 
 ```js
-Vue.component("vue-image", VueImageEffect.default);
+Vue.component('vue-image', VueImageEffect.default)
 ```
 
 You may also register the component locally via the [components option](https://vuejs.org/v2/guide/components.html#Local-Registration).
