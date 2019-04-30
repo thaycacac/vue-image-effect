@@ -5,7 +5,9 @@
   "main": "dist/image-effect.min.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base ./example --env=webpack.dev --open --hot",
-    "build": "webpack --mode=production --hide-modules --env=webpack.prod"
+    "build": "webpack --mode=production --hide-modules --env=webpack.prod",
+    "dev-docs": "vuepress dev docs",
+    "build-docs": "vuepress build docs"
   },
   "browserslist": [
     "> 1%",
