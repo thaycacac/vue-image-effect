@@ -1,7 +1,10 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const merge = require('webpack-merge')
+const TerserPlugin = require('terser-webpack-plugin')
 
-module.exports = {
+const baseConfig = require('./webpack.base')
+
+module.exports = merge(baseConfig, {
   entry: {
     'image-effect': './src/index.js',
   },
@@ -11,30 +14,19 @@ module.exports = {
     filename: '[name].min.js',
     library: 'VueImageEffect',
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
-  module: {
-    rules: [{
-      test: /\.vue$/,
-      loader: 'vue-loader'
-    }, {
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/
-    }]
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true, // Must be set to true if using source-maps in production
+        terserOptions: {
+          // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+        },
+      }),
+    ],
   },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      include: /\.min\.js$/,
-      compress: {
-        warnings: false
-      }
-    })
-  ],
-  devtool: 'source-map'
-}
+  devtool: 'source-map',
+})

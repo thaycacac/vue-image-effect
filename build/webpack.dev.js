@@ -1,24 +1,16 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const merge = require('webpack-merge')
 
-module.exports = {
+const baseConfig = require('./webpack.base')
+
+module.exports = merge(baseConfig, {
   entry: {
     'image-effect': './example/app.js',
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
-    filename: '[name].js'
+    filename: '[name].js',
   },
-  module: {
-    rules: [{
-      test: /\.vue$/,
-      loader: 'vue-loader'
-    }, {
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/
-    }]
-  },
-  devtool: 'eval-source-map'
-}
+  devtool: 'eval-source-map',
+})
