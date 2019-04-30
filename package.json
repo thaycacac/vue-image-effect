@@ -7,6 +7,11 @@
     "dev": "webpack-dev-server --content-base ./example --env=webpack.dev --open --hot",
     "build": "webpack --mode=production --hide-modules --env=webpack.prod"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thaycacac/vue-image-effect"
@@ -36,12 +41,14 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.5",
     "css-loader": "^0.28.1",
     "eslint-config-vue": "^2.0.2",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^2.0.1",
     "jasmine": "^2.5.3",
+    "postcss-loader": "^3.0.0",
     "terser-webpack-plugin": "^1.2.3",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
