@@ -19,11 +19,11 @@
       filterBlueReverse ? 'filter-blue-reverse' : '',
       flash ? 'flash' : '',
       shine ? 'shine' : '',
-      circle ? 'circle' : ''
+      circle ? 'circle' : '',
     ]"
   >
     <div class="wrap-image" :class="classImage">
-      <img :src="src" :style="`width: ${width}; height: ${height}`" :alt="alt">
+      <img :src="src" :style="`width: ${width}; height: ${height}`" :alt="alt" />
     </div>
     <figcaption :class="classDescription">{{ description }}</figcaption>
   </figure>
@@ -144,6 +144,14 @@ export default {
   padding: 0;
   overflow: hidden;
   display: inline-flex;
+}
+
+figure {
+  margin: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 /* Zoom In */
